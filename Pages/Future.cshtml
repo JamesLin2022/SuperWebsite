@@ -1,0 +1,37 @@
+﻿@page
+@model FutureModel
+@{
+    ViewData["Title"] = "THE FUTURE";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's FUTURE.</p>
+
+<form method="post">
+	<div class="form-group">
+		<label asp-for="MonthlyInvestment" class="control-label"></label>
+		<input asp-for="MonthlyInvestment" class="form-control" />
+	</div>
+
+
+	<div class="form-group">
+		<label asp-for="YearlyInterestRate" class="control-label"></label>
+		<input asp-for="YearlyInterestRate" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Years" class="control-label"></label>
+		<input asp-for="Years" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label class="control-label">Future Value:</label>
+		<input value='@ViewBag.FV.ToString("C2")' readonly class="form-control">
+	</div>
+
+	<div class="form-group">
+           <br />
+		<input type="submit" value="Calculate" class="btn btn-primary" />
+		<a asp-action="Index" class="btn btn-success">Clear</a>
+	</div>
+</form>
